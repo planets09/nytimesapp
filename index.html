@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en" ng-app='myApp'>
+
+<head> 
+	<meta charset="utf-8" />
+	<meta name="description" content="" />
+	<meta name="description" content="Created by Rena Tan" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
+  	<link rel="shortcut icon" href="images/favicon.ico" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="css/animate.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<title>Angular Magic Hour</title>
+
+<!-- ANGULAR link (should be above head tag)-->
+<!-- 	<script type="text/javascript" src="js/angular.js"></script> -->
+	<script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js'></script>
+
+	<script src='https://code.angular.js.org/1.2.28/angular-route.min.js'></script>
+
+</head>
+
+ 
+<body>
+
+<!-- 1) Angular is a framework used for (SPA) single page application. You can separate out your logic and create different controllers for each action. You basically modularize your code instead of a long JS file.-->
+
+<!-- 2) MVC: Model View Controller: 1) Model: the data; 2) View: the display; UI; 3) Controller: the logic; JS code. The controller manipulates the data; you can use the controller to manipulate the data and view.-->
+	
+<!-- 3) Two-way data binding: If you change the data on one side of binding then it changes the view and vice versa. Binding between the view and the controller.-->
+
+<!-- 4) What is $scope? The 'glue' between controller and view. It's what binds our variables to our view. -->
+	
+<!-- 5) What is a controller?  Defines our javascript logic. It's the JS code itself. -->
+
+<!-- 6) ng is a directive. -->
+
+<!-- Digest Cycle is negative sides of Angular. -->
+
+<!-- NodeJS runs on Chrome's engine; it's a nonblocking engine and allows you to write server side javascript: i.e. send mail, spit out a web server on your own computer, etc. You must in current folder in Terminal, then type npm init and json file will be installed.-->
+
+<!-- The code will only work inside this div. -->
+<div ng-controller='firstCtrl'>
+
+
+	<input class='form-control' type="text" ng-model='myValue' />
+
+<!-- Passing myValue thru ng-click='click()' function. -->
+<!-- ng-disabled: can disable the button until there is a value input. Or, use ng-disabled='myValue.length < 3' for the button to recognize you have to type at least 3 letters to input value. -->
+	<button ng-disabled='!myValue.length' class='btn btn-primary' ng-click='click(myValue)'>Submit Request</button>
+
+	<div>
+<!-- repeat over my data: -->
+		<ul>
+			<li ng-repeat='new in newsArr'>
+				{{ new.headline.main }}
+			</li>
+		</ul>
+		
+
+	</div>
+
+
+</div>
+
+
+
+
+<footer> 
+	
+</footer>
+
+<!-- jQuery Link (CDN and file link) -->
+<!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.js"></script> -->
+<script type="text/javascript" src="library/jquery-3.1.1.min.js"></script>
+
+<!-- Bootstrap Link (CDN and file link) -->
+<!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+<!-- My JavaScript Link (file link) -->
+<script src="js/app.js"></script>
+
+
+
+</body>
+
+
+
+</html>
+
