@@ -11,7 +11,13 @@ app.controller('firstCtrl', function($scope, $http){
 //Using .then to check if the data comes in or resolved. Basically, wait until it's resolved before moving forward.
 	$http.get('https://api.nytimes.com/svc/search/v2/articlesearch.json?q='+ words +' &api-key=f6f8236cce5b4069b38f7a0d56ffbeed').then(function(success){
 	$scope.newsArr = success.data.response.docs;
-	// console.log(newsArr);
+	console.log(success)
+
+	$('.container').css('height', '95vh')
+	$('#preview').src= " {{ new.web_url }} "
+	// var h = window.innerHeight;
+	// // console.log(h);
+	// console.log($('#results').height())
 
 });
 		

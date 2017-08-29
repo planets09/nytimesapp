@@ -1,85 +1,73 @@
-@import 'buttons.scss';
-//if you want to import anything, do it at TOP of page and use @import ''; Remember 
-//to use ';'' to close out the code otherwise you will errors on regular CSS page.
+@import url('https://fonts.googleapis.com/css?family=Gudea');
 
-
-// To save a variable using Sass, use $ symbol and no quotes. It will not save you time typing the 
-//code, but it will save you time when changing it.
-$colorOne: #F883DC;
-//path to image folder itself:
-$imagePath: '../images/';
-//@mixin creates the actual mixin, and then put properties:
-@mixin mixinOne{
-	border: 3px red dotted;
-}
-@mixin flatbutton{
-// border: none; 
-	background-color: navy;
-	box-shadow: none;
-	color: white;
-	padding: 5px;
-	font-family: Impact;
-	font-size: 15px;
+html {
+	height: 100vh;
 }
 
-//you can use parameters to create transitions for ANY elements:
-@mixin transition($what: all, $time: 0.3s, $show: ease-in-out){
-	-webkit-transition: $what $time $show;
-	-moz-transition:    $what $time $show;
-	-ms-transition:     $what $time $show;
-	-o-transition:      $what $time $show;
+
+body{
+	background-image: url('../images/rolledpaper.jpg');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100vh;
+	overflow: scroll;
 }
 
-@include transition(all, 0.5s, linear);
 
-// ++++++||||||||||||||||||||||||||||||||||||||||||||||||||||||||+++++
-
-*{
-	padding: 0px;
-	margin: 0px;
-	outline: none;
-}
-
-nav{
-	background-color: black;
+div {
+	h3{
+		font-style: italic;
+		font-weight: bold;
+	}
 	ul{
-		text-align: center;
-
-		li{
-			display: inline-block;
-			padding: 10px 15px;
-			font-size: 25px;
-			a{
-			color: $colorOne;
-			text-decoration: none;
-			}
-			&#home{
-			background-color: yellow;
-			}
-			&:hover{
-			background-color: orange;
-			border: $colorOne dotted 5px;
-			}
-		}
+		list-style: none;
+		margin-top: 5px;
+	}
+	li{
+		font-family: 'Gudea', sans-serif;
+		font-size: 12px;
 	}
 }
 
-#cta{
-	height: 1000px;
-	background-image: url($imagePath + "/rainbow-unicorn.jpeg");
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-p{
-	width: 50%;
+input.form-control{
+	display: inline-block;
+	width: 55%;
 	margin: 30px;
-	@include mixinOne;
-	@include flatbutton;
-	color:$colorOne;
+	font-size: 20px;
+	padding: 22px;
+	background-color: #FFFFD5;
 }
 
-//using LESS instead of SASS. You must use paranthesis():
-// p{
-// 	.thisIsMyLessMixin();
-// }
+#search-box {
+	text-align: center;
+	input, button {
+		opacity: 1;
+		padding: 10px;
+	}
+	input{
+		padding: 25px;
+		margin-top: 25px;
+	}
+}
+
+iframe{
+	display: none;
+}
+
+li:hover iframe{
+	display: initial;
+	height: 200px;
+	width: 500px;
+	overflow: scroll;
+}
+
+.container {
+	background-color: rgba(216, 216, 216, 0.8);
+	overflow: scroll;
+ 	height: 15vh;
+}
+
+#newsinfo{
+	transition: 0.5s ease;
+}

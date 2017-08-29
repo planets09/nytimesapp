@@ -1,3 +1,58 @@
+@import url("https://fonts.googleapis.com/css?family=Gudea");
+html {
+  height: 100vh; }
 
+body {
+  background-image: url("../images/rolledpaper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  overflow: scroll; }
 
+div h3 {
+  font-style: italic;
+  font-weight: bold; }
+div ul {
+  list-style: none;
+  margin-top: 5px; }
+div li {
+  font-family: 'Gudea', sans-serif;
+  font-size: 12px; }
 
+input.form-control {
+  display: inline-block;
+  width: 55%;
+  margin: 30px;
+  font-size: 20px;
+  padding: 22px;
+  background-color: #FFFFD5; }
+
+#search-box {
+  text-align: center; }
+  #search-box input, #search-box button {
+    opacity: 1;
+    padding: 10px; }
+  #search-box input {
+    padding: 25px;
+    margin-top: 25px; }
+
+iframe {
+  display: none; }
+
+li:hover iframe {
+  display: initial;
+  height: 200px;
+  width: 500px;
+  overflow: scroll; }
+
+.container {
+  background-color: rgba(216, 216, 216, 0.8);
+  overflow: scroll;
+  height: 15vh; }
+
+#newsinfo {
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease; }
+
+/*# sourceMappingURL=main.css.map */

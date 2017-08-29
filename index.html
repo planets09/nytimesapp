@@ -4,17 +4,18 @@
 
 <head> 
 	<meta charset="utf-8" />
-	<meta name="description" content="" />
+	<meta name="description" content="New York Times Article Search App" />
 	<meta name="description" content="Created by Rena Tan" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
   	<link rel="shortcut icon" href="images/favicon.ico" />
+  	<link href="https://fonts.googleapis.com/css?family=Gudea" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" />
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
 	<link rel="stylesheet" href="css/animate.css" />
 	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<title>Angular Magic Hour</title>
+	<title>New York Times Article Search App</title>
 
 <!-- ANGULAR link (should be above head tag)-->
 <!-- 	<script type="text/javascript" src="js/angular.js"></script> -->
@@ -44,27 +45,35 @@
 <!-- NodeJS runs on Chrome's engine; it's a nonblocking engine and allows you to write server side javascript: i.e. send mail, spit out a web server on your own computer, etc. You must in current folder in Terminal, then type npm init and json file will be installed.-->
 
 <!-- The code will only work inside this div. -->
-<div ng-controller='firstCtrl'>
+<div class='container2'>
+	
+</div>
+
+<div class='container' id='results' ng-controller='firstCtrl'>
 
 
-	<input class='form-control' type="text" ng-model='myValue' />
+
 
 <!-- Passing myValue thru ng-click='click()' function. -->
 <!-- ng-disabled: can disable the button until there is a value input. Or, use ng-disabled='myValue.length < 3' for the button to recognize you have to type at least 3 letters to input value. -->
-	<button ng-disabled='!myValue.length' class='btn btn-primary' ng-click='click(myValue)'>Submit Request</button>
+<div id='search-box'>
+	<input class='form-control' type="text" ng-model='myValue' />
 
-	<div>
+	<button ng-disabled='!myValue.length' class='btn btn-danger' ng-click='click(myValue)'>Search Request</button>
+</div>
+
+
+	<div id='newsinfo'>
 <!-- repeat over my data: -->
 		<ul>
 			<li ng-repeat='new in newsArr'>
-				{{ new.headline.main }}
+				<h3><a ng-href=" {{ new.web_url }} ">{{ new.headline.main }}</a></h3>
+				<iframe id='preview'></iframe>
+				<h4>{{ new.snippet }}</h4>
+				<br />
 			</li>
 		</ul>
-		
-
 	</div>
-
-
 </div>
 
 
