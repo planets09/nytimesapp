@@ -1,10 +1,18 @@
 
 //The [] is a dependency, which is part of dependency injection. Also, you must reference
 // 'myApp' as your ng-app in the code.
+
+
+
 var app = angular.module('myApp', []);
 
 // This is Angular's version of an .ajax call to get API:
+
+
 app.controller('firstCtrl', function($scope, $http){
+
+		var anchor
+		var href
 
 	$scope.click = function(words){
 // Pass WORD parameter into the API query as a string so that the API will take the user's input.
@@ -14,13 +22,17 @@ app.controller('firstCtrl', function($scope, $http){
 	console.log(success)
 
 	$('.container').css('height', '95vh')
-	$('#preview').src= " {{ new.web_url }} "
-	// var h = window.innerHeight;
-	// // console.log(h);
-	// console.log($('#results').height())
+		var anchor = $('li').children().children('a')
+		var href = $(anchor).attr('ng-href')
 
-});
+		$('#preview').attr('src', href)
 		
 	}
 
-})
+});
+
+}
+
+	// var h = window.innerHeight;
+	// // console.log(h);
+	// console.log($('#results').height())
